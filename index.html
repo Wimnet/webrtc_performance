@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>webRTC Analyzer</title>
+	</head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<body>
+		<h1>WebRTC Analyzer</h1>
+		<h3 id="title">Enter a room</h3>
+		<style>
+			body {
+				margin: 30px;
+			}
+			.videoContainer {
+				position: relative;
+				width: 400px;
+				height: 300px;
+			}
+			.videoContainer video {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				display: inline-block;
+			}
+			.room_name {
+				width: 300px;
+			}
+			.ilb {
+				display: inline-block;
+			}
+			.padders {
+				margin-top: 1em;
+			}
+			.connection-state {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+			}
+		</style>
+		<form id="createRoom">
+			<input type="text" class="form-control room_name" placeholder="room name" id="sessionInput"/>
+			<button type="submit" class="btn btn-default padders">Create</button>
+		</form>
+		<button type="button" class="btn btn-primary padders" id="logStats"></button>
+
+		<div class="videoContainer">
+			<video id="localVideo" style="height: 300px;" oncontextmenu="return false;"></video>
+		</div>
+		<div id="remotes"></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script src="simplewebrtc.bundle.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+			apiKey: "AIzaSyC3b9rqXkY9wvOZiYWZUisKVgYdsdI_K2c",
+			authDomain: "phidio-c8b8a.firebaseapp.com",
+			databaseURL: "https://phidio-c8b8a.firebaseio.com",
+			projectId: "phidio-c8b8a",
+			storageBucket: "phidio-c8b8a.appspot.com",
+			messagingSenderId: "981313563789"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		<script src="client.js"></script>
+	</body>
+</html>

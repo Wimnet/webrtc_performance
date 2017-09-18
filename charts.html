@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Charts</title>
+    <script src="https://www.gstatic.com/firebasejs/3.0.5/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+    <script src="/charts.js"></script>
+    <style>
+    body {
+        text-align: center;
+    }
+    select, option {
+        width: 500px;
+        font-size: 28px;
+    }
+    </style>
+</head>
+<body>
+    <select id='callSelect'>
+        <option value=''>Select the call you want to analyze</option>
+    </select><br/><br/>
+    <a id="downloadData">Download call data (json)</a>
+
+    <div width="400" height="400">
+    <canvas id="bwChart" width="400" height="400" style="width:100%;height:100%;" ></canvas>
+    </div>
+    <div width="400" height="400">
+    <canvas id="fpsChart" width="400" height="400" style="width:100%;height:100%;" ></canvas>
+    </div>
+    <div width="400" height="400">
+    <canvas id="resChart" width="400" height="400" style="width:100%;height:100%;" ></canvas>
+    </div>
+    <div width="400" height="400">
+    <canvas id="plChart" width="400" height="400" style="width:100%;height:100%;" ></canvas>
+    </div>
+
+    <div width="400" height="400">
+    <canvas id="rttChart" width="400" height="400" style="width:100%;height:100%;" ></canvas>
+    </div>
+</body>
+</html>
